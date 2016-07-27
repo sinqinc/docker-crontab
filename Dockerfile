@@ -11,7 +11,7 @@ RUN chmod 0644 /etc/cron.d/docker-cron
 RUN touch /var/log/cron.log
 
 #Init crontab script
-RUN /usr/bin/crontab /etc/cron.d/docker-cron
+#RUN /usr/bin/crontab /etc/cron.d/docker-cron
  
 # Run the command on container startup
 CMD [“cron”, “-f”]
