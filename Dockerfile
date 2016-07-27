@@ -17,4 +17,4 @@ RUN touch /var/log/cron.log
 RUN /usr/bin/crontab /etc/cron.d/docker-cron
  
 # Run the command on container startup
-CMD [“cron”, “-f”]
+CMD ["cron", "-f"]
