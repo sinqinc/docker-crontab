@@ -1,5 +1,8 @@
 FROM ubuntu:latest
 MAINTAINER info@sinq.ca
+
+#INSTALL CRON
+RUN apt-get update&&apt-get install cron
  
 # Add crontab file in the cron directory
 ADD crontab /etc/cron.d/docker-cron
@@ -11,7 +14,7 @@ RUN chmod 0644 /etc/cron.d/docker-cron
 RUN touch /var/log/cron.log
 
 #Init crontab script
-#RUN /usr/bin/crontab /etc/cron.d/docker-cron
+RUN /usr/bin/crontab /etc/cron.d/docker-cron
  
 # Run the command on container startup
 CMD [“cron”, “-f”]
